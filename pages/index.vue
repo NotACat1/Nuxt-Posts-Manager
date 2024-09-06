@@ -14,6 +14,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import { storeToRefs } from 'pinia';
 import { usePostsStore } from '@/store/usePostsStore';
 import PostsTable from '@/components/PostsTable.vue';
 import Modal from '@/components/Modal.vue';
@@ -21,7 +22,8 @@ import ModalCreate from '@/components/ModalCreate.vue';
 
 const isModalVisible = ref(false);
 const store = usePostsStore();
-const { fetchPosts, loading } = store;
+const { loading } = storeToRefs(store);
+const { fetchPosts } = store;
 
 onMounted(() => {
   fetchPosts();

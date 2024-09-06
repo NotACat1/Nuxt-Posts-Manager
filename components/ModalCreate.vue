@@ -53,6 +53,7 @@ const isVisible = ref(true);
 const newPost = ref<{ title: string; body: string }>({ title: '', body: '' });
 
 const store = usePostsStore();
+const { addPost } = store;
 
 const validate = () => {
   return newPost.value.title.trim() !== '' && newPost.value.body.trim() !== '';
@@ -62,7 +63,7 @@ const isFormValid = computed(() => validate());
 
 const createPost = () => {
   if (isFormValid.value) {
-    store.addPost({
+    addPost({
       userId: 1,
       title: newPost.value.title,
       body: newPost.value.body,

@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen flex flex-col">
+  <div class="min-h-screen max-w-full overflow-x-hidden flex flex-col">
     <header class="bg-blue-500 text-white p-4 text-center">
       <h1 class="text-2xl">Nuxt Posts Manager</h1>
     </header>

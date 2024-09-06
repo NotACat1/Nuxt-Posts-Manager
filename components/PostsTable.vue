@@ -67,17 +67,21 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref, computed, watchEffect } from 'vue';
+import { storeToRefs } from 'pinia';
 import { usePostsStore } from '@/store/usePostsStore';
 
 const store = usePostsStore();
-const { posts, loading, fetchPosts } = store;
+const { loading, posts } = storeToRefs(store);
 
-const sortPosts = ref([...posts]);
-console.log(sortPosts);
+const sortPosts = ref(posts.value);
 const currentPage = ref(1);
 const itemsPerPage = 10;
 const sortDirection = ref<'asc' | 'desc'>('asc');
+
+watchEffect(() => {
+  sortPosts.value = [...posts.value];
+});
 
 const toggleSort = () => {
   sortDirection.value = sortDirection.value === 'asc' ? 'desc' : 'asc';

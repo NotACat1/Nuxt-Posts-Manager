@@ -18,6 +18,6 @@ export default defineNuxtConfig({
   },
   ssr: true,
   app: {
-    baseURL: '/<REPOSITORY_NAME>/',
+    baseURL: '/Nuxt-Posts-Manager/',
   },
 });
