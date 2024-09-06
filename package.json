@@ -1,0 +1,58 @@
+{
+  "name": "nuxt-posts-manager",
+  "version": "0.0.1",
+  "description": "NuxtPostsManager — это веб-приложение, которое отображает список постов с использованием API JSONPlaceholder. Приложение реализует функции просмотра, сортировки, пагинации и создания постов с помощью модального окна.",
+  "author": "NotACat1",
+  "private": true,
+  "license": "UNLICENSED",
+  "homepage": "https://notacat1.github.io/Nuxt-Posts-Manager",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NotACat1/Nuxt-Posts-Manager"
+  },
+  "keywords": [
+    "Nuxt",
+    "Vue",
+    "Tailwind",
+    "Pinia",
+    "TypeScript"
+  ],
+  "scripts": {
+    "prepare": "husky install",
+    "lint": "eslint --ext .ts,.vue .",
+    "lint:fix": "eslint --ext .ts,.vue . --fix",
+    "format": "prettier --write .",
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "deploy": "gh-pages -d .nuxt/dist",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "lint-staged": {
+    "*.{ts,vue}": "eslint --fix"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.5.4",
+    "axios": "^1.7.7",
+    "nuxt": "^3.13.1",
+    "pinia": "^2.2.2",
+    "vue": "latest",
+    "vue-router": "latest"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.4.1",
+    "@commitlint/config-conventional": "^19.4.1",
+    "@nuxt/types": "^2.18.1",
+    "autoprefixer": "^10.4.20",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "gh-pages": "^6.1.1",
+    "husky": "^9.1.5",
+    "lint-staged": "^15.2.10",
+    "postcss": "^8.4.45",
+    "prettier": "^3.3.3",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.5.4"
+  }
+}
